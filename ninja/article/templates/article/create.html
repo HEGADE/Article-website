@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title> {{request.user|capfirst}}</title> 
+    {% load static %}
+    <!-- <link rel="stylesheet" href='{% load static%} -->
+    <link rel="stylesheet" href="{% static 'article/create.css'%}">
+    <link rel="stylesheet" href="{% static 'article/usrer.css'%}">
+   
+</head>
+
+<body>
+    <br>
+    <h5 class="arico">Arico.com</h5>
+    <div class="hr"></div>
+    <br>
+    <h1 class="welcome">Welcome {{user}}</h1>
+    <br>
+
+
+    <p class="info">
+        This is the place there your going to add some articles
+    </p>
+    <br>
+
+    <form action="" method="POST" id="formm" onsubmit="return(sub());" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <center>
+            <img src="" alt="user" class="img" id="result">
+            <br>
+            <b class="user_img">your image</b>
+        </center>
+        <input type="file" name="userimg" id="demo"  value="file" onchange="fu()" >
+
+        <label for="demo">Photo</label>
+
+
+        <div class="aligner">
+
+            <input type="text" name="heading" id="heading" placeholder="Article Heading" required>
+            <br>
+            <textarea name="text"  cols="30" rows="10" spellcheck="true" placeholder="Article Content"
+                required id="area"></textarea>
+            <br>
+            <input type="submit" value="Lets Go" class="submit" id="submit">
+            <input type="reset" value="cancel" class="submit">
+        </div>
+    </form>
+<a href="/logout">logout</a>
+<script src="{% static 'article/user.js' %}" defer></script>
+
+</body>
+
+<script src="{% static 'article/redirect.js' %}"></script>
+
+
+</html>

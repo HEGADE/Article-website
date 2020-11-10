@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="white">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Arico</title>
+    {% load static %}
+    {% load humanize%}
+    <link rel="stylesheet" href="{% static 'article/readmore.css' %}">
+    <link rel="shortcut icon" href="{% static 'article/responsive.png' %}" type="image/x-icon">
+
+
+    <style>
+        a {
+
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <h5 class="arico">Arico.com</h5>
+    <div class="hr"></div>
+    <div class="assembler" id="manu">
+
+        <div class="manu"></div>
+        <div class="manu1"></div>
+        <div class="manu2"></div>
+    </div>
+    <div class="container" id="container">
+
+        <ul class="searchul" id="animation">
+            <li>Ar</li>
+            <li style="color: rgb(255, 0, 170);">Home</li>
+            <li><a href="/signup">Signup</a></li>
+            <li><a href="/login">login</a></li>
+            <li><a href="/signup">About</a></li>
+            <li><a href="/signup">Contact</a></li>
+        </ul>
+        <br>
+
+    </div>
+
+{% for i in params %}
+
+    <div class="goes">
+        <div class="holder">
+            
+            <img src="{% static 'article/imag9es (6).png' %}" alt="ninja" class="img">
+            <i class="date">posted at &nbsp;{{i.timeStamp|naturaltime}}</i>
+            <input type="hidden" value="{{i.timeStamp|naturaltime}}">
+            <h3>{{i.heading|capfirst}}</h3>
+            <article  class="pa" id="pa">
+                
+                {{i.content|capfirst|linebreaksbr|urlize}}
+           </article>
+            <b class="name"><i>Author is  </i> &nbsp;{{i.cUser}}</b>
+        </div>
+    </div>
+    
+    {% endfor %}
+    
+    <!-- <footer>
+
+        <center>
+            <b class="ftb">devloped by s hegade</b><br>
+            <b class="ftb">All rights reserved</b><br>
+        </center>
+    </footer> -->
+    <script src="{% static 'article/manu.js' %}"></script>
+
+</body>
+
+</html>
+<!-- <a href="/login" target="_blank" rel="noopener noreferrer">login</a>     -->

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="theme-color" content="#00AAFD">
+	<meta name="author" content="subrahmanya S Hegade">
+	<meta name="keywords" content="articles">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Arico</title>
+	{% load static %}
+	{% load humanize %}
+	<link rel="stylesheet" href="{% static 'article/start.css' %}">
+	<link rel="shortcut icon" href="{% static 'article/responsive.png' %}" type="image/x-icon">
+
+</head>
+ 
+<body>
+	<noscript>you need to enable java script to run this app</noscript>
+
+	<br>
+	
+
+	<h5 class="arico">Arico.com</h5>
+	<div class="hr"></div>
+	<div class="assembler" id="manu">
+
+		<div class="manu"></div>
+		<div class="manu1"></div>
+		<div class="manu2"></div>
+	</div>
+	<br>
+
+	<div class="container" id="container">
+
+		<ul class="searchul" id="animation">
+			<li>Ar</li>
+			<li style="color: rgb(255, 0, 170);">Home</li>
+			<li><a href="/signup">Signup</a></li>
+			<li><a href="/login">login</a></li>
+			<li><a href="/login/create">CreateArticle</a></li>
+			<li><a href="/signup">About</a></li>
+			<li><a href="/signup">Contact</a></li>
+
+		</ul>
+		<br>
+
+	</div>
+	<br>
+	<br>
+	<br>
+	<center>
+
+		<form action="search" method="GET">
+			<input type="search" class="search" name="search" required minlength="4" placeholder="search..">
+			<input type="submit" id="submit" value="submit">
+		</form>
+	</center>
+	{% comment %} <img src="{% static 'article/imagoes (6).png' %}" alt="something" class="img1"> {% endcomment %}
+	<br>
+	<p class="ari">More for you less for us.welcome to Arico </p>
+	<br>
+
+	<center>
+
+		<b class="today">{{no}}</b>
+	</center>
+	{% for i in params %}
+
+	<div class="goes">
+
+		<div class="holder">
+			<img src="{% static 'article/imag9es (6).png' %}" alt="ninja" class="img" title="user image">
+			<i class="date">{{i.timeStamp}}</i>
+			<input type="hidden" value="{{i.timeStamp|naturaltime}}">
+
+			<h3>{{i.heading|truncatewords:6|title}}</h3>
+			<div class='color-full'></div>
+			<p class="pa">
+
+				{{i.content|truncatechars:250|capfirst}}
+			</p>
+
+			{% if no1 %}
+			<b class="name">{{no1}}</b>
+			{% else %}
+			<b class="name">{{i.cUser}}</b>
+
+			{% endif %}
+
+		</div>
+		<div class="clip">
+			{% if i.content|length > 345 %}
+			<a href="readmore{{i.sno}}{{i.heading}}"
+				style="color: white ; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">ContinueReading</a>
+			{% else %}
+			<a href="#" style="color: white ; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">No more
+				content</a>
+			{% endif %}
+
+		</div>
+	</div>
+	{% endfor %}
+
+	<br>
+	
+	<script src="{% static 'article/manu.js' %}" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Subramanya S Hegade" />
+
+    <title>singupnpage</title>
+    {% load static %}
+    <!-- <link rel="stylesheet" href="index.css">  -->
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="{% static 'article/style.css' %}">
+</head>
+
+<body>
+
+    <br>
+
+    <span class="bg">
+        <h1>Create your acccount</h1>
+    </span>
+
+    <br>
+
+    <div class="container">
+
+        <form action="/signup/" method="post" >
+            {% csrf_token %}
+            <input type="text" name="name" id="name" tabindex="1" spellcheck="true" autocomplete="username"
+                placeholder="Enter your user name">
+            <br>
+            <br>
+            <input type="password" name="password" id="pass" placeholder="Enter your password"><br>
+            <input type="password" name="cpassword" id="cpass" placeholder="confirm your password">
+
+
+            <br>
+
+       
+            <div id="spin" class="spin">
+
+            </div>
+            <input type="submit" id="submit" value="Create" title="here you go">
+
+            <small style="text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgb(255, 0, 0);">We are using hashing algorithms to secure your password..</small>
+
+            <br>
+            <small style="text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            ;"><a href="login.php" style="text-decoration: none; color: rgb(0, 47, 255); "> alredy have an
+                    acccount?</a>
+            </small>
+        </form>
+    </div>
+    <!-- <script src="aj.js"></script> -->
+    <!-- <script src="validate.js"></script> -->
+    <!-- <script src="spin.js"></script> -->
+</body>
+
+</html>

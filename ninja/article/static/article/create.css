@@ -1,0 +1,118 @@
+*{
+box-sizing: border-box;
+padding: 0px;
+margin:0px;
+}
+
+body{
+background: ghostwhite;
+scroll-behavior: smooth;
+
+}
+
+.arico{
+margin-left: 20px;
+color: lightseagreen;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-style: italic;
+
+font-size: 1.8em;
+}
+.hr{
+margin-left: 20px;
+width: 90%;
+height: 4px;
+background: linear-gradient(45deg,rgb(0, 162, 255),rgb(255, 61, 158));
+
+}
+.welcome{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+text-align: right;
+margin-right: 20px;
+font-style: oblique;
+font-size: 1.8em;
+
+}
+.info{
+text-align: center;
+color: rgb(255, 230, 0);
+font-size: 2em;
+/* width: 80%; */
+margin-left: 10px;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+form{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+textarea{
+margin: 10px; width: 1191px; height: 355px;
+background: rgba(109, 214, 255, 0.3);
+outline: none;
+border: none;
+font-size: large;
+border-left: 5px solid gold;
+font-style: oblique;
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#heading{
+border:none;
+outline: none;
+border-radius: 5px;
+background: #ccc;
+width: 60%;
+width: 100%;
+border-bottom: 5px solid rgba(255, 0, 234, 0.425);
+border-bottom: 5px solid rgba(255, 0, 234, 0.425);
+margin: 6px;
+font-weight: bolder;
+font-style: oblique;
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+padding: 10px;
+
+}
+
+.submit{
+border: 1px solid #ccc;
+color: rgb(68, 180, 255);
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: rgb(255, 255, 255);
+padding: 3px;
+font-size: large;
+float: right;
+margin: 6px;
+/* clear: both; */
+border-radius: 5px;
+font-weight: bolder;
+cursor: pointer;
+}
+@media(max-width:500px){
+form{
+display: block;
+}
+textarea{
+margin:5px; width: 90%; height: 200px;
+padding: 0px;
+position: relative;
+left: 0px;
+
+
+}
+.info{
+font-size: medium;
+margin-right: 5px;
+
+}
+#heading{
+width: 90%;
+margin: 10px;
+
+
+}
+.submit{
+margin-right: 30px;
+}
+}
